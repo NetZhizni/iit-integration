@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+
+	<script>
+		if (typeof Promise !== "function")
+			document.write('<script src="./JS/promise.min.js"><\/script>');
+	</script>
+
+	<!-- Підключення скрипта з обгорткою для бібліотеки "ІІТ Користувач ЦСК Підпис (JavaScript)" -->
+	<script src='./JS/euscp.js'></script>
+
+	<!-- Підключення основного скрипта сторінки тестування -->
+	<script src='./JS/main.js'></script>
+</head>
+
+<body>
+	<h1>Підпис даних</h1>
+	<h2>Для підпису даних оберіть ос. ключ та введіть до нього пароль</h2>
+	<br><br>
+
+	<div>
+		<p>Оберіть тип носія ос. ключа</p>
+		<input type="radio" id="pkTypeFile" name="pkType" checked>
+		<label for="pkTypeFile">Файловий носій</label>
+
+		<input type="radio" id="pkTypeKeyMedia" name="pkType">
+		<label for="pkTypeKeyMedia">Захищений носій</label>
+
+		<input type="radio" id="pkTypeKSP" name="pkType">
+		<label for="pkTypeKSP">Носій у складі сервісу</label>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="pkFileBlock">
+		<label>Файл з ос. ключем:</label>
+		<input id="pkFile" type="file"></input>
+		<br>
+		<label>Пароль:</label>
+		<br>
+		<input id="pkFilePassword" type="password"></input>
+	</div>
+
+	<div id="pkKeyMediaBlock" style="display:none">
+		<label>Носій ос. ключа:</label>
+		<select id="pkKeyMediaSelect">
+		</select>
+		<br>
+		<label>Пароль:</label>
+		<br>
+		<input id="pkKeyMediaPassword" type="password"></input>
+	</div>
+
+	<div id="pkKSPBlock" style="display:none">
+		<label>Тип сервісу підпису:</label>
+		<select id="pkKSPSelect">
+		</select>
+		<div id="pkKSPUserIdBlock">
+			<br>
+			<label>Ідентифікатор користувача:</label>
+			<br>
+			<input id="pkKSPUserId"></input>
+		</div>
+
+		<div id="pkKSPQRBlock" style="display:none">
+			<br>
+			<label id="pkKSPQRImageLabel"></label>
+			<br>
+			<div id="pkKSPQRImageBlock"></div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+
+	<div id="signBlock" style="display:none">
+		<label>Дані для підпису:</label>
+		<br>
+		<textarea id='data-textarea' style="width:350px; height:100px; overflow:scroll;"></textarea>
+		<br><br>
+		<button id='sign-button'>Накласти підпис</button>
+		<br><br>
+		<label>Підписані дані:</label>
+		<br><br>
+		<textarea id='sign-textarea' style="width:350px; height:100px; overflow:scroll;"></textarea>
+		<br><br>
+	</div>
+</body>
+
+</html>
