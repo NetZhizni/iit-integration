@@ -25,7 +25,7 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Eds } from '@/eds/Eds';
+import { Eds } from 'eds/Eds';
 import { FileConverter } from '@/eds/FileConverter';
 
 const eds = new Eds();
