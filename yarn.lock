@@ -4123,9 +4123,9 @@ editorconfig@^1.0.3:
     minimatch "9.0.1"
     semver "^7.5.3"
 
-"eds@git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#faab1f55df83f7ea250dea5e9470f8fe594bd823":
-  version "0.0.11"
-  resolved "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#faab1f55df83f7ea250dea5e9470f8fe594bd823"
+"eds@git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#a5c67d5ebeace2ab391fb78b8e8b27ec3b4c5d34":
+  version "0.0.13"
+  resolved "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#a5c67d5ebeace2ab391fb78b8e8b27ec3b4c5d34"
 
 ee-first@1.1.1:
   version "1.1.1"

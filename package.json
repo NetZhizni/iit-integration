@@ -8,11 +8,11 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "postinstall": "cp -r ./node_modules/eds/public ./public"
+    "postinstall": "cp -r ./node_modules/eds/public ./"
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "eds": "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#faab1f55df83f7ea250dea5e9470f8fe594bd823",
+    "eds": "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#cf9b76185bc34288814dd218d2046527da0c42e6",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
