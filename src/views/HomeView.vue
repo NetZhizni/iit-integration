@@ -2,24 +2,33 @@
   <div class="main">
     <label for="file">
       Key
-      <input type="file" name="file" @change="setKey">
+      <input type="file" name="file" @change="setKey" />
     </label>
-    <br>
+    <br />
     <label for="password">
       Password
-      <input type="text" name="password" v-model="password">
+      <input type="text" name="password" v-model="password" />
     </label>
-    <br>
+    <br />
     <button @click="readKey">Read</button>
 
-    <br>
-    <br>
+    <br />
+    <br />
     <label for="file">
       Data to sign
-      <input type="file" name="file" @change="setData">
+      <input type="file" name="file" @change="setData" />
     </label>
-    <br>
+    <br />
     <button @click="sign">Sign</button>
+    <br />
+    <hr class="hr" />
+    <br />
+    <label for="file">
+      Check the signature
+      <input type="file" name="file" @change="setSignatureFile" />
+    </label>
+    <br />
+    <button @click="check">Check</button>
   </div>
 </template>
 
@@ -31,7 +40,9 @@ import { FileConverter } from '@/eds/FileConverter';
 const eds = new Eds();
 const file = ref<File | null>();
 const dataToSign = ref<File | null>();
-const password = ref('Olyaolya03');
+const dataToCheck = ref<File | null>();
+const password = ref('cxJmBTh2Lo9qhauipW2b');
+
 const setKey = ($e: Event) => {
   const target = $e.target as HTMLInputElement;
   if (target.files) {
@@ -44,11 +55,26 @@ const setData = ($e: Event) => {
     dataToSign.value = target?.files[0];
   }
 };
+const setSignatureFile = ($e: Event) => {
+  const target = $e.target as HTMLInputElement;
+  if (target.files) {
+    dataToCheck.value = target?.files[0];
+  }
+};
 const readKey = async () => {
   await eds.init();
   try {
     const pkey = await eds.readPrivateKey(file.value as File, password.value);
     console.log(pkey);
+  } catch (e) {
+    console.error(e);
+  }
+};
+const check = async () => {
+  await eds.init();
+  try {
+    const pkey2 = await eds.getSignerFromFile(dataToCheck.value as File);
+    console.log(pkey2[0].infoEx);
   } catch (e) {
     console.error(e);
   }
@@ -84,5 +110,9 @@ onMounted(async () => {
   width: 200px;
   display: flex;
   flex-direction: column;
+}
+.hr {
+  width: 95%;
+  border: 1px solid black;
 }
 </style>
