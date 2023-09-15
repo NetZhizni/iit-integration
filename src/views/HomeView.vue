@@ -47,6 +47,7 @@ const setData = ($e: Event) => {
 const readKey = async () => {
   await eds.init();
   try {
+    console.log(file.value);
     const pkey = await eds.readPrivateKey(file.value as File, password.value);
     console.log(pkey);
   } catch (e) {
