@@ -58,7 +58,7 @@ const sign = async () => {
   await eds.init();
   try {
     const fileToSign = await FileConverter.toArrayBuffer(dataToSign.value as File);
-    const signature = await eds.signData(fileToSign.data, true, true);
+    const signature = await eds.signData(fileToSign.data, false);
     console.log(signature);
 
     const linkSource = `data:application/pkcs7-signature;base64,${signature}`;

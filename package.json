@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.3",
-    "eds": "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#cf9b76185bc34288814dd218d2046527da0c42e6",
+    "eds": "git+https://gitlab+deploy-token-54:kWNSi4QzL3ZrxXvMBifX@gitlab.npu.np.work/novadoc/frontend/eds#e0ef15aed25a4109b5a5601936a7b73a4d8d45e6",
     "register-service-worker": "^1.7.2",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3"
