@@ -8,7 +8,7 @@
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint",
-    "postinstall": "node -e \"require('fs').cpSync('./node_modules/eds/public', './public, {recursive: true});\""
+    "postinstall": "node -e \"require('fs').cpSync('./node_modules/eds/public', './public', {recursive: true});\""
   },
   "dependencies": {
     "core-js": "^3.8.3",
