@@ -25,13 +25,13 @@
 
 <script setup lang="ts">
 import { onMounted, ref } from 'vue';
-import { Eds } from 'eds/Eds';
+import { Eds } from 'eds';
 import { FileConverter } from '@/eds/FileConverter';
 
 const eds = new Eds();
 const file = ref<File | null>();
 const dataToSign = ref<File | null>();
-const password = ref('');
+const password = ref('Olyaolya03');
 const setKey = ($e: Event) => {
   const target = $e.target as HTMLInputElement;
   if (target.files) {
@@ -58,10 +58,10 @@ const sign = async () => {
   await eds.init();
   try {
     const fileToSign = await FileConverter.toArrayBuffer(dataToSign.value as File);
-    const signature = await eds.signData(fileToSign.data, false, true);
+    const signature = await eds.signData(fileToSign.data, true, true);
     console.log(signature);
 
-    const linkSource = `data:application/pdf;base64,${signature}`;
+    const linkSource = `data:application/pkcs7-signature;base64,${signature}`;
     const downloadLink = document.createElement('a');
     document.body.appendChild(downloadLink);
 
