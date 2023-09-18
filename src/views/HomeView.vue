@@ -74,8 +74,8 @@ const readKey = async () => {
 const check = async () => {
   await eds.init();
   try {
-    const pkey2 = await eds.getSignerFromFile(dataToCheck.value as File);
-    console.log(pkey2[0].infoEx);
+    const pkey2 = await eds.getSigner(dataToCheck.value as File);
+    console.log(pkey2);
   } catch (e) {
     console.error(e);
   }
